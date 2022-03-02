@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "mobile-app": "apps/mobile-app",
+    "api": "apps/api"
+  }
 }

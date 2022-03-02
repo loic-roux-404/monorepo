@@ -1,0 +1,7 @@
+manala:
+  recipe: ops.cd
+  repository: /Users/loic/Ops/manala-recipes/
+
+
+gitignore: ""
+
