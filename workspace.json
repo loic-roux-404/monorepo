@@ -1,8 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "mobile-app": "apps/mobile-app",
     "auth": "apps/auth",
-    "business": "apps/business"
+    "mobile-app": "apps/mobile-app"
   }
 }
