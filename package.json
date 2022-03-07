@@ -14,6 +14,7 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "13.8.3",
     "@nrwl/workspace": "13.8.3",
+    "@nx-tools/nx-docker": "^2.3.0",
     "@nxrocks/nx-flutter": "^3.0.2",
     "@nxrocks/nx-spring-boot": "^4.0.2",
     "@types/node": "16.11.7",

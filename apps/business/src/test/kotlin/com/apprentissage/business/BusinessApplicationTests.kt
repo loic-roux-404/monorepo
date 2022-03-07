@@ -1,4 +1,4 @@
-package com.safeway.business
+package com.apprentissage.business
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
@@ -6,8 +6,5 @@ import org.springframework.boot.test.context.SpringBootTest
 @SpringBootTest
 class BusinessApplicationTests {
 
-	@Test
-	fun contextLoads() {
-	}
-
+  @Test fun contextLoads() {}
 }

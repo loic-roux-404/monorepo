@@ -2,7 +2,6 @@
   "version": 2,
   "projects": {
     "mobile-app": "apps/mobile-app",
-    "map": "apps/map",
     "auth": "apps/auth",
     "business": "apps/business"
   }

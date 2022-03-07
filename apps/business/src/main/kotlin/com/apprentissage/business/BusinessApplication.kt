@@ -1,11 +1,10 @@
-package com.safeway.auth
+package com.apprentissage.business
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
-class AuthApplication
+@SpringBootApplication class BusinessApplication
 
 fun main(args: Array<String>) {
-	runApplication<AuthApplication>(*args)
+  runApplication<BusinessApplication>(*args)
 }

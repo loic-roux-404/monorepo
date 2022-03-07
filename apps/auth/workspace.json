@@ -1,0 +1,12 @@
+{
+  "docker": {
+    "executor": "@nx-tools/nx-docker:build",
+    "options": {
+      "push": true,
+      "tags": [
+        "safeway/auth:latest",
+        "safeway/auth:v1"
+      ]
+    }
+  }
+}
