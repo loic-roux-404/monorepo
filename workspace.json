@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "auth": "apps/auth",
-    "mobile-app": "apps/mobile-app"
+    "gamification": "apps/gamification",
+    "front-mobile": "apps/front-mobile"
   }
 }

@@ -1,6 +1,6 @@
-# mobile_app
+# front_mobile
 
-Front end
+Multi plateform Mobile app
 
 ## Getting Started
 
