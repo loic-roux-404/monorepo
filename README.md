@@ -1,6 +1,7 @@
-
-
 # ProjetApprentissage
+
+- [Sprint / Backlog Jira](https://abclever.atlassian.net/jira/software/projects/AB/boards/1/backlog?selectedIssue=AB-22)
+- [Documentation](https://abclever.atlassian.net/wiki/spaces/ABCLEAVER/overview)
 
 This project was generated using [Nx](https://nx.dev).
 
