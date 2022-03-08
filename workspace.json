@@ -3,6 +3,7 @@
   "projects": {
     "auth": "apps/auth",
     "gamification": "apps/gamification",
-    "front-mobile": "apps/front-mobile"
+    "front-mobile": "apps/front-mobile",
+    "statistic": "apps/statistic"
   }
 }
