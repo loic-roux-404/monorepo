@@ -10,10 +10,10 @@
   "private": true,
   "devDependencies": {
     "@jscutlery/semver": "^2.20.0",
-    "@nrwl/cli": "13.8.3",
-    "@nrwl/nx-cloud": "latest",
-    "@nrwl/tao": "13.8.3",
-    "@nrwl/workspace": "13.8.3",
+    "@nrwl/cli": "13.8.5",
+    "@nrwl/nx-cloud": "13.1.6",
+    "@nrwl/tao": "13.8.5",
+    "@nrwl/workspace": "13.8.5",
     "@nx-tools/nx-docker": "^2.3.0",
     "@nxrocks/nx-flutter": "^3.0.2",
     "@nxrocks/nx-spring-boot": "^4.0.2",
@@ -26,3 +26,4 @@
     "@pulumi/pulumi": "^3.25.1"
   }
 }
+
