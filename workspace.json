@@ -4,6 +4,7 @@
     "auth": "apps/auth",
     "gamification": "apps/gamification",
     "front-mobile": "apps/front-mobile",
-    "statistic": "apps/statistic"
+    "statistic": "apps/statistic",
+    "quizz": "apps/quizz"
   }
 }
