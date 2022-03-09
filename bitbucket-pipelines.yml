@@ -1,11 +1,10 @@
-image: atlassian/default-image:2
+image: atlassian/default-image:latest
 
 pipelines:
   branches:
     "develop":
       - step:
           name: "Install"
-          image: node:14.19.0
           caches:
             - node
           script:
@@ -13,7 +12,6 @@ pipelines:
             - pnpm install
       - step:
           name: "Test"
-          image: node:14.19.0
           caches:
             - node
           script:
