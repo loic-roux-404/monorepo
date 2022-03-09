@@ -11,7 +11,7 @@ plugins {
 
 group = "com.abcleaver"
 
-version = "0.0.1-SNAPSHOT"
+version = System.getenv("APP_VERSION") ?: "0.0.1-SNAPSHOT"
 
 java.sourceCompatibility = JavaVersion.VERSION_17
 

@@ -42,7 +42,7 @@ configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
     format("misc") {
         // define the files to apply 'misc' to
-        target("*.md", ".gitignore")
+        target(""*.md", ".gitignore")
 
         // define the steps to apply to those files
         trimTrailingWhitespace()

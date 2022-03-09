@@ -1,10 +1,11 @@
-package com.apprentissage.auth
+package com.abclever.gateway
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication class AuthApplication
+@SpringBootApplication
+class GatewayApplication
 
 fun main(args: Array<String>) {
-  runApplication<AuthApplication>(*args)
+	runApplication<GatewayApplication>(*args)
 }

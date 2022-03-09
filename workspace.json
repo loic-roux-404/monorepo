@@ -2,9 +2,11 @@
   "version": 2,
   "projects": {
     "auth": "apps/auth",
-    "gamification": "apps/gamification",
     "front-mobile": "apps/front-mobile",
-    "statistic": "apps/statistic",
-    "quizz": "apps/quizz"
+    "quizz": "apps/quizz",
+    "gamification": "apps/gamification",
+    "gateway": "apps/gateway",
+    "integrationtesting": "apps/integrationtesting",
+    "statistic": "apps/statistic"
   }
 }

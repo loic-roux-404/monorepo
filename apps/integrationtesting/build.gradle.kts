@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "com.abclever"
-version = System.getenv("APP_VERSION") ?: "0.0.1-SNAPSHOT"
+version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
@@ -18,11 +18,16 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
+  val cucumberVersion = "7.2.3"
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+  testImplementation("org.junit.platform:junit-platform-suite-api:1.8.2")
+  testImplementation("org.junit.platform:junit-platform-console:1.8.2")
+  testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("io.cucumber:cucumber-junit-platform-engine:$cucumberVersion")
+  testImplementation("io.cucumber:cucumber-java8:$cucumberVersion")
+  testImplementation("io.cucumber:cucumber-junit:$cucumberVersion")
+  testImplementation("org.assertj:assertj-guava:3.4.0")
 }
 
 tasks.withType<KotlinCompile> {
@@ -34,10 +39,29 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+  systemProperty("cucumber.junit-platform.naming-strategy", "long")
 }
-springBoot {
-	buildInfo()
+
+// Hack to use junit platform with cucumber
+tasks {
+
+  val consoleLauncherTest by registering(JavaExec::class) {
+    dependsOn(testClasses)
+    val reportsDir = file("$buildDir/test-results")
+    outputs.dir(reportsDir)
+    classpath = sourceSets["test"].runtimeClasspath
+    main = "org.junit.platform.console.ConsoleLauncher"
+    args("--scan-classpath")
+    args("--include-engine", "cucumber")
+    args("--reports-dir", reportsDir)
+  }
+
+  test {
+    dependsOn(consoleLauncherTest)
+    exclude("**/*")
+  }
 }
+
 configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
     format("misc") {
