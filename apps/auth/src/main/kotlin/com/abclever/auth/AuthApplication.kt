@@ -1,4 +1,4 @@
-package com.abclever.tests.auth
+package com.abclever.auth
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

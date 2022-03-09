@@ -1,0 +1,23 @@
+image: atlassian/default-image:2
+
+pipelines:
+  branches:
+    "develop":
+      - step:
+          name: "Install"
+          image: node:14.19.0
+          caches:
+            - node
+          script:
+            - npm install -g pnpm
+            - pnpm install
+      - step:
+          name: "Test"
+          image: node:14.19.0
+          caches:
+            - node
+          script:
+            - npx nx affected --base=HEAD~1 --target=build --parallel=3
+            - npx nx affected --base=HEAD~1 --target=test --parallel=2
+
+# TODO on branch main deploy on k8s

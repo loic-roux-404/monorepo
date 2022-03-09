@@ -1,4 +1,4 @@
-package com.abclever.tests.auth
+package com.abclever.auth
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
