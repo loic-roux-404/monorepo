@@ -69,7 +69,7 @@
     "run": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "flutter run",
+        "command": "flutter run -d chrome",
         "cwd": "apps/front-mobile"
       }
     },
