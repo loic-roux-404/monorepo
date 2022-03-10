@@ -1,4 +1,4 @@
-package com.abcleaver.controller
+package com.abcleaver.gamification.controller
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

@@ -38,25 +38,4 @@ tasks.withType<Test> {
 springBoot {
 	buildInfo()
 }
-configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
-    format("misc") {
-        // define the files to apply 'misc' to
-        target("*.md", ".gitignore")
-
-        // define the steps to apply to those files
-        trimTrailingWhitespace()
-        indentWithTabs() // or spaces. Takes an integer argument if you don't like 4
-        endWithNewline()
-    }
-
-    kotlin { // to customize, go to https://github.com/diffplug/spotless/tree/main/plugin-gradle#kotlin
-
-        // Apply ktfmt formatter(similar to google-java-format, but for Kotlin)
-        ktfmt()
-    }
-    kotlinGradle {
-        target("*.gradle.kts") // default target for kotlinGradle
-        ktfmt()
-    }
-}
