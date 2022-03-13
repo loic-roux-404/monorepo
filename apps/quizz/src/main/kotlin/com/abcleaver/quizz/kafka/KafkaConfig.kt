@@ -1,4 +1,4 @@
-package com.abcleaver.statistic.kafka
+package com.abcleaver.quizz.kafka
 
 import org.apache.kafka.clients.admin.AdminClientConfig
 import org.apache.kafka.clients.admin.NewTopic
