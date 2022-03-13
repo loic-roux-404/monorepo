@@ -24,11 +24,9 @@ class MainController (@Value("\${kafka.topics.product}") val topic:String,
         .setHeader(KafkaHeaders.TOPIC, topic)
         .build()
       kafkaTemplate.send(message)
-      ResponseEntity.ok().build()
+      return ResponseEntity.ok().build()
     } catch (e: Exception) {
-      ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error")
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error")
     }
-    return ResponseEntity.ok().build()
-
   }
 }
