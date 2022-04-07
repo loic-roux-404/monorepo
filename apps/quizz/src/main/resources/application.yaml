@@ -2,5 +2,3 @@ server:
   port : 8085
 kafka:
   bootstrapAddress: localhost:9092
-  topics:
-    product: product
