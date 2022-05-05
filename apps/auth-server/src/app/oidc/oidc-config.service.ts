@@ -5,7 +5,7 @@ import {
 import { Injectable } from '@nestjs/common';
 import { AdapterFactory } from 'oidc-provider';
 import oidc from './oidc.config';
-import { OPEN_ID_PATH, OPEN_ID_ISSUER } from '../environment';
+import { OPEN_ID_ISSUER } from '../environment';
 import { OidcAdapter } from '../oidc-adapter/oidc.adapter';
 import { AdapterService } from '../oidc-adapter/oidc.adapter.service';
 import { InjectModel } from '@nestjs/sequelize';
@@ -22,7 +22,6 @@ export class OidcConfigService implements OidcModuleOptionsFactory {
     const criticalQueryOptions = { retry: { max: 10, match: [] }}
     return {
       issuer: OPEN_ID_ISSUER,
-      path: OPEN_ID_PATH,
       oidc: {
         ...oidc,
         ...{ clients: await this.clientModel.findAll(criticalQueryOptions) },

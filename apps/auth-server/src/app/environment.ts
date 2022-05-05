@@ -28,10 +28,9 @@ const OPEN_ID_ISSUER =
     `http://${process.env.AUTH_SERVER_IP || '0.0.0.0'}:${
       process.env.AUTH_SERVER_PORT || '3333'
     }`,
-  OPEN_ID_PATH = process.env.OPEN_ID_PATH || '/oidc',
   AUTH_RESOURCE_SERVER_URL = process.env.AUTH_RESOURCE_SERVER_URL || '0.0.0.0:8082';
 
-export { OPEN_ID_ISSUER, OPEN_ID_PATH, AUTH_RESOURCE_SERVER_URL };
+export { OPEN_ID_ISSUER, AUTH_RESOURCE_SERVER_URL };
 
 export default {
   production: process.env.NODE_ENV === 'production',

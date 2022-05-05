@@ -4,7 +4,7 @@ import { Controller, Get } from '@nestjs/common';
 export class AppController {
   constructor() {}
 
-  @Get()
+  @Get("/home")
   getData() {
     return { message: 'Welcome to auth-server!' };
   }

@@ -31,7 +31,7 @@ spring:
             client-secret: test_secret
             scope: api, profile, openid
             authorization-uri: http://0.0.0.0:3333/oidc/auth
-            issuer-uri: http://0.0.0.0:3333/oidc
+            issuer-uri: http://0.0.0.0:3333
             jwk-set-uri: http://0.0.0.0:3333/oidc/jwks
             user-info-uri: http://0.0.0.0:3333/oidc/me
             token-uri: http://0.0.0.0:3333/oidc/token
