@@ -1,0 +1,72 @@
+{
+  "root": "apps/auth-server",
+  "sourceRoot": "apps/auth-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/auth-server",
+        "main": "apps/auth-server/src/main.ts",
+        "tsConfig": "apps/auth-server/tsconfig.app.json",
+        "assets": [
+          "apps/auth-server/src/assets"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/auth-server/src/environments/environment.ts",
+              "with": "apps/auth-server/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "auth-server:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/auth-server/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/auth-server"
+      ],
+      "options": {
+        "jestConfig": "apps/auth-server/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "api": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "rm -rf apps/auth-server/gen/api",
+          "pnpm openapi-generator-cli generate -i 0.0.0.0:3333/api/docs-json --generator-name typescript-axios -o apps/auth-server/gen/api --config apps/auth-server/api.json",
+          "cd apps/auth-server && pnpm install && pnpm run build"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

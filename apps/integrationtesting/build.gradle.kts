@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.6.4"
+	id("org.springframework.boot") version "2.6.7"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	war
 	kotlin("jvm") version "1.6.10"
-	kotlin("plugin.spring") version "1.6.10"
+	kotlin("plugin.spring") version "1.6.21"
 	id("com.diffplug.spotless") version "6.2.2"
 }
 
@@ -18,16 +18,24 @@ repositories {
 }
 
 dependencies {
-  val cucumberVersion = "7.2.3"
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+  annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+
+  val cucumberVersion = "7.3.2"
+  implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.21")
+  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21")
+
+  // Project to test
+  implementation("${group}:auth")
+
   testImplementation("org.junit.platform:junit-platform-suite-api:1.8.2")
   testImplementation("org.junit.platform:junit-platform-console:1.8.2")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.cucumber:cucumber-junit-platform-engine:$cucumberVersion")
   testImplementation("io.cucumber:cucumber-java8:$cucumberVersion")
   testImplementation("io.cucumber:cucumber-junit:$cucumberVersion")
+  testImplementation("io.cucumber:cucumber-spring:$cucumberVersion")
   testImplementation("org.assertj:assertj-guava:3.4.0")
+  testImplementation("com.github.tomakehurst:wiremock-jre8:2.33.1")
 }
 
 tasks.withType<KotlinCompile> {
@@ -40,26 +48,6 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
   systemProperty("cucumber.junit-platform.naming-strategy", "long")
-}
-
-// Hack to use junit platform with cucumber
-tasks {
-
-  val consoleLauncherTest by registering(JavaExec::class) {
-    dependsOn(testClasses)
-    val reportsDir = file("$buildDir/test-results")
-    outputs.dir(reportsDir)
-    classpath = sourceSets["test"].runtimeClasspath
-    main = "org.junit.platform.console.ConsoleLauncher"
-    args("--scan-classpath")
-    args("--include-engine", "cucumber")
-    args("--reports-dir", reportsDir)
-  }
-
-  test {
-    dependsOn(consoleLauncherTest)
-    exclude("**/*")
-  }
 }
 
 configure<com.diffplug.gradle.spotless.SpotlessExtension> {

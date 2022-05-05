@@ -19,10 +19,30 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
+  implementation("org.springdoc:springdoc-openapi-ui:1.6.6")
+
+  implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
   implementation("org.springframework.boot:spring-boot-starter-security")
-  implementation("org.springframework.security:spring-security-oauth2-authorization-server")
+  implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+  implementation("org.springdoc:springdoc-openapi-security:1.6.6")
+
+  implementation("org.glassfish.jaxb:jaxb-runtime:3.0.2")
+  implementation("com.sun.xml.bind:jaxb-core:3.0.2")
+  implementation("com.sun.xml.bind:jaxb-impl:3.0.2")
+  implementation("javax.xml.bind:jaxb-api:2.3.1")
+  implementation("org.javassist:javassist:3.28.0-GA")
+
+  implementation("org.projectlombok:lombok:1.18.22")
+  implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+  runtimeOnly("com.h2database:h2")
+  runtimeOnly("org.postgresql:postgresql")
+
+  implementation("org.springframework.boot:spring-boot-starter-jdbc")
+
+	implementation("org.springdoc:springdoc-openapi-ui:1.6.6")
+
   implementation("org.springframework.security:spring-security-test")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -41,6 +61,10 @@ tasks.withType<Test> {
 springBoot {
 	buildInfo()
 }
+
+var env: String? = System.getenv("NODE_ENV")
+System.setProperty("spring.profiles.active", env ?: "dev")
+
 configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
     format("misc") {
@@ -58,6 +82,7 @@ configure<com.diffplug.gradle.spotless.SpotlessExtension> {
         // Apply ktfmt formatter(similar to google-java-format, but for Kotlin)
         ktfmt()
     }
+
     kotlinGradle {
         target("*.gradle.kts") // default target for kotlinGradle
         ktfmt()

@@ -39,12 +39,6 @@
         "root": "apps/integrationtesting"
       }
     },
-    "serve": {
-      "executor": "@nxrocks/nx-spring-boot:serve",
-      "options": {
-        "root": "apps/integrationtesting"
-      }
-    },
     "buildImage": {
       "executor": "@nxrocks/nx-spring-boot:buildImage",
       "options": {

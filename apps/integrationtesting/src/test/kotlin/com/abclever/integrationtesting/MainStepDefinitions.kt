@@ -5,10 +5,14 @@ import io.cucumber.java8.En
 import io.cucumber.java8.Scenario
 import org.junit.jupiter.api.Assertions.*
 import org.opentest4j.TestAbortedException
+import org.springframework.beans.factory.annotation.Autowired
+import com.abclever.integrationtesting.http.*
 
 var lastInstance: MainStepDefinitions? = null
 
-class MainStepDefinitions : En {
+class MainStepDefinitions(
+  @Autowired private var properties: AppsConfigurationProperties
+) : En {
 
   init {
 
@@ -32,6 +36,10 @@ class MainStepDefinitions : En {
       lastInstance = this
     }
 
+    Then("app {word} on route {word} status is {int}") { app: String, route: String, code: Int ->
+      assertEquals(get(properties.fullRoute(app, route)), code)
+    }
+
     DataTableType { entry: Map<String, String> ->
       return@DataTableType Person(
         entry["first"],
@@ -42,7 +50,7 @@ class MainStepDefinitions : En {
     Given("this data table:") { peopleTable: DataTable ->
       val people: List<Person> = peopleTable.asList(Person::class.java)
       assertEquals("Aslak", people[0].first)
-      assertEquals("Hellesøy", people[0].last)
+      assertEquals("Hellesoy", people[0].last)
     }
 
     val alreadyHadThisManyCukes = 1
