@@ -1,4 +1,4 @@
-package com.abcleaver.quizz.domain.alphabet
+package com.abcleaver.quizz.domain
 
 import java.util.*
 import kotlin.random.Random

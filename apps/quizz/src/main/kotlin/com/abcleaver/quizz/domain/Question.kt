@@ -1,6 +1,5 @@
 package com.abcleaver.quizz.domain
 
-import com.abcleaver.quizz.domain.alphabet.Letter
 import kotlin.random.Random
 
 enum class QuestionType {

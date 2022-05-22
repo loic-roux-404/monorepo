@@ -1,10 +1,10 @@
 package com.abcleaver.quizz.domain
 
-import com.abcleaver.quizz.domain.alphabet.AlphabetService
+import com.abcleaver.quizz.port.QuizzServiceOut
 
-object QuizzService {
+object QuizzService : QuizzServiceOut {
 
-  fun getQuizz(questionNumber: Int = 15): Quizz {
+  fun get (questionNumber: Int = 15): Quizz {
     val questions = (1..questionNumber)
       .map { AlphabetService.getRandomLetter() }
       .map { QuestionService.createQuestion(it)  }

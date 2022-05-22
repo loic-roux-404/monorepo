@@ -10,8 +10,8 @@ internal class QuizzServiceTest {
 
   @Test
   fun quizz_should_have_the_requested_size(){
-    assert(QuizzService.getQuizz(15).questions.size.equals(15))
-    assert(QuizzService.getQuizz(400).questions.size.equals(400))
+    assert(QuizzService.get(15).questions.size.equals(15))
+    assert(QuizzService.get(400).questions.size.equals(400))
   }
 
 }
