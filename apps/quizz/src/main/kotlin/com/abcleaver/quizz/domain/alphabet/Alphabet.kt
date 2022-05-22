@@ -1,8 +1,12 @@
 package com.abcleaver.quizz.domain.alphabet
 
 import java.util.*
+import kotlin.random.Random
 
-internal data class Alphabet(val letter: Set<Letter>) {
+internal data class Alphabet(val letters: Set<Letter>) {
+  fun getRandomLetter(): Letter {
+    return letters.elementAt(Random.nextInt(0, letters.size))
+  }
 
   companion object {
     fun from(lettersString: Set<String>): Alphabet {
