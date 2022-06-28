@@ -25,8 +25,18 @@ services:
     networks:
       - internals
 
+  elasticsearch:
+    image: elasticsearch:8.2.3
+    restart: always
+    volumes:
+      - es:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+
+
 networks:
   internals: {}
 
 volumes:
   pgsql:
+  es:
