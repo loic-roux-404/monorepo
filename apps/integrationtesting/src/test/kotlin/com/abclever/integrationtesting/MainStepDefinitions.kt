@@ -7,6 +7,8 @@ import io.cucumber.java8.En
 import io.cucumber.java8.Scenario
 import kotlinx.coroutines.DelicateCoroutinesApi
 import org.junit.jupiter.api.Assertions.*
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 @DelicateCoroutinesApi
 var lastInstance: MainStepDefinitions? = null
@@ -26,6 +28,8 @@ fun cleanEnv() {
 class MainStepDefinitions(
   private val templating: Templating
 ): En {
+
+  private var logger: Logger = LoggerFactory.getLogger(MainStepDefinitions::class.java)
 
   init {
     this.templating.add(mapOf("apps" to apps))
