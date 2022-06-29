@@ -13,12 +13,16 @@ import io.restassured.module.kotlin.extensions.*
 import io.restassured.response.Response
 import org.hamcrest.CoreMatchers.containsString
 import org.assertj.core.api.Assertions
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 var lastRestStepDefinitions: RestStepDefinitions? = null
 
 class RestStepDefinitions(
   private val templating: Templating,
 ) : En {
+
+  private var logger: Logger = LoggerFactory.getLogger(RestStepDefinitions::class.java)
 
   init {
     val restTestingEnv = RestTestingEnv(templating, CookieFilter(), SessionFilter())
