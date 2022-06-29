@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 class MainController : QuizzOut {
   @GetMapping("/quizz")
   override fun index(@RequestParam("size") size: Int): Quizz {
+//    TODO Convert domain model to dto
     return QuizzService.get(size)
   }
 }
