@@ -1,6 +1,6 @@
-name: myaccount
+name: abcleaver
 description: Account manager
-homepage: https://github.com/esgi-lyon/flutter-myaccount
+homepage: https://github.com/esgi-lyon/flutter-abcleaver
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -48,4 +48,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/translations/
-  

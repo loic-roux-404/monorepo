@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myaccount/features/user/bloc/user_bloc.dart';
-import 'package:myaccount/features/user/view/user_fields.dart';
+import 'package:abcleaver/features/user/bloc/user_bloc.dart';
+import 'package:abcleaver/features/user/view/user_fields.dart';
 
 class UserFormConfigs {
   static final updateInputs = [

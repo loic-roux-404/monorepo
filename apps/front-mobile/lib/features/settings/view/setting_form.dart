@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:myaccount/commons/theme.dart';
-import 'package:myaccount/commons/widgets/form_message.dart';
-import 'package:myaccount/features/settings/bloc/setting_bloc.dart';
+import 'package:abcleaver/commons/theme.dart';
+import 'package:abcleaver/commons/widgets/form_message.dart';
+import 'package:abcleaver/features/settings/bloc/setting_bloc.dart';
 
 class SettingForm extends StatelessWidget {
   const SettingForm({Key? key, this.successMessage = "success"})

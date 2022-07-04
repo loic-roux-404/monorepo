@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:myaccount/commons/validations/simple_boolean.dart';
+import 'package:abcleaver/commons/validations/simple_boolean.dart';
 
 part 'setting_event.dart';
 part 'setting_state.dart';

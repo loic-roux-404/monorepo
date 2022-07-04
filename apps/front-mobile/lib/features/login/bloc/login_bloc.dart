@@ -2,9 +2,9 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:myaccount/commons/validations/simple_boolean.dart';
-import 'package:myaccount/features/user/validations/user_validations.dart';
-import 'package:myaccount/commons/extensions/formz.dart';
+import 'package:abcleaver/commons/validations/simple_boolean.dart';
+import 'package:abcleaver/features/user/validations/user_validations.dart';
+import 'package:abcleaver/commons/extensions/formz.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

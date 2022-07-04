@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:myaccount/features/user/validations/email.dart';
-import 'package:myaccount/commons/validations/validations.dart';
-import 'package:myaccount/features/user/validations/password.dart';
+import 'package:abcleaver/features/user/validations/email.dart';
+import 'package:abcleaver/commons/validations/validations.dart';
+import 'package:abcleaver/features/user/validations/password.dart';
 import 'package:user_repository/user_repository.dart';
-import 'package:myaccount/commons/extensions/string.dart';
-import 'package:myaccount/commons/extensions/formz.dart';
+import 'package:abcleaver/commons/extensions/string.dart';
+import 'package:abcleaver/commons/extensions/formz.dart';
 
 part 'user_event.dart';
 part 'user_state.dart';
