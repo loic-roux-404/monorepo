@@ -30,9 +30,9 @@ dependencies {
   implementation ("org.springframework.cloud:spring-cloud-starter-gateway")
 
   implementation(
-    "org.springframework.cloud:spring-cloud-starter-contract-stub-runner",
-    // exclude(group = "org.springframework.boot", module = "spring-boot-starter-web")
-  )
+    "org.springframework.cloud:spring-cloud-starter-contract-stub-runner") {
+    exclude(group = "org.springframework.boot", module = "spring-boot-starter-web")
+  }
   providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
