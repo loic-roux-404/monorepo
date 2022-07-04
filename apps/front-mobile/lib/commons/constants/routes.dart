@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:myaccount/app/home.dart';
-import 'package:myaccount/app/splash_screen.dart';
-import 'package:myaccount/commons/widgets/loading_indicator.dart';
-import 'package:myaccount/features/login/view/login_view.dart';
-import 'package:myaccount/features/settings/view/setting_page.dart';
-import 'package:myaccount/features/user/view/user_forgot_page.dart';
-import 'package:myaccount/features/user/view/user_view.dart';
+import 'package:abcleaver/app/home.dart';
+import 'package:abcleaver/app/splash_screen.dart';
+import 'package:abcleaver/commons/widgets/loading_indicator.dart';
+import 'package:abcleaver/features/login/view/login_view.dart';
+import 'package:abcleaver/features/settings/view/setting_page.dart';
+import 'package:abcleaver/features/user/view/user_forgot_page.dart';
+import 'package:abcleaver/features/user/view/user_view.dart';
 
 class Routes {
   static const String splashScreen = '/';

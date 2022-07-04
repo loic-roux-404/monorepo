@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myaccount/app/simple_app_bar.dart';
-import 'package:myaccount/commons/theme.dart';
-import 'package:myaccount/features/user/bloc/user_bloc.dart';
-import 'package:myaccount/features/user/view/user_form.dart';
-import 'package:myaccount/features/user/view/user_form_configs.dart';
+import 'package:abcleaver/app/simple_app_bar.dart';
+import 'package:abcleaver/commons/theme.dart';
+import 'package:abcleaver/features/user/bloc/user_bloc.dart';
+import 'package:abcleaver/features/user/view/user_form.dart';
+import 'package:abcleaver/features/user/view/user_form_configs.dart';
 import 'package:user_repository/user_repository.dart';
 import 'package:formz/formz.dart';
 

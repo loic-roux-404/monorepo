@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myaccount/app/app.dart';
+import 'package:abcleaver/app/app.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 

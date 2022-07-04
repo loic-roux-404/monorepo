@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myaccount/app/simple_app_bar.dart';
-import 'package:myaccount/commons/theme.dart';
-import 'package:myaccount/features/authentication/authentication.dart';
+import 'package:abcleaver/app/simple_app_bar.dart';
+import 'package:abcleaver/commons/theme.dart';
+import 'package:abcleaver/features/authentication/authentication.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
