@@ -1,5 +1,6 @@
 {
   "sourceRoot": "apps/auth-server/src",
+  "root": "apps/auth-server",
   "projectType": "application",
   "targets": {
     "build": {
